@@ -65,7 +65,7 @@ class Search():
         qList_kw, questionList, answerList = self.read_corpus(seg)
         """简单的倒排索引"""
         # 计算倒排表
-        invertTable = self.invert_idxTable(qList_kw)       
+        invertTable = self.invert_idxTable(qList_kw)
         inputQuestionKW = seg.cut(question)
         # 利用关键词匹配得到与原来相似的集合
         questionList_s, answerList_s = self.filter_questionByInvertTab(
