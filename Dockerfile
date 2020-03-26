@@ -1,5 +1,5 @@
 # 基于镜像基础
-FROM python:3.7
+FROM python:3.7-alpine
   
 # 设置代码文件夹工作目录 /app
 WORKDIR /app
@@ -8,7 +8,7 @@ WORKDIR /app
 ADD . /app
   
 # 安装所需的包
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
   
 # Run app.py when the container launches
 CMD ["python", "app.py"]
